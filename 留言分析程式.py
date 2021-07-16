@@ -1,5 +1,6 @@
 data = []
 data_100以下 = []
+data_取good = []
 count = 0
 count = bool(count)
 with open('reviews.txt', 'r') as message:
@@ -16,12 +17,16 @@ total = int(total)
 graph = int(graph)
 while graph != len(data):
 	total = total + len(data[graph])
+	if 'good' in data[graph]:
+		data_取good.append(data[graph])
 	if len(data[graph]) < 100:
 		data_100以下.append(data[graph])
 	graph = graph + 1
 print ('我算的字串平均數為', total/len(data))
 print ('我算一百以下的字數有', len(data_100以下), '筆資料')
 print (data_100以下[0])
+print ('我寫的有good的數有',len(data_取good),'筆')
+print (data_取good[0])
 
 #老師的程式碼
 sum_len = 0
@@ -36,3 +41,10 @@ for d in data:
 		new.append(d)
 print ('老師算的一共有', len(new), '筆留言長度小於100')
 print (new[0])
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+print ('老師寫的有good的數有',len(data_取good),'筆')
+print (good[0])
