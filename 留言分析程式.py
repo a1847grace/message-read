@@ -48,3 +48,14 @@ for d in data:
 		good.append(d)
 print ('老師寫的有good的數有',len(data_取good),'筆')
 print (good[0])
+
+#速寫法
+good_fast = []
+good_fast = [1 for T in data if 'good' in T]
+print (good_fast)
+bad = []
+bad = ['bad' in G for G in data]
+
+for G in data:
+	bad.append('bad' in G)
+print (bad)
